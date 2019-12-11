@@ -81,6 +81,7 @@ while True:
         p_open_client(client_socket)
     elif s == 'open_server':
         p_open_server(server_socket)
+        conn, address = p_accept(server_socket)
     elif s == 'send':
         p_send(conn)
     elif s == 'close_client':
