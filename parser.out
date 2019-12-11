@@ -1,0 +1,160 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> open_client
+Rule 2     statement -> open_server
+Rule 3     statement -> send
+Rule 4     statement -> close_client
+Rule 5     statement -> accept
+Rule 6     statement -> close_server
+Rule 7     open_client -> OPEN_CLIENT
+Rule 8     open_server -> OPEN_SERVER
+Rule 9     send -> SEND
+Rule 10    close_client -> CLOSE_CLIENT
+Rule 11    accept -> ACCEPT
+Rule 12    close_server -> CLOSE_SERVER
+
+Terminals, with rules where they appear
+
+ACCEPT               : 11
+CLOSE_CLIENT         : 10
+CLOSE_SERVER         : 12
+OPEN_CLIENT          : 7
+OPEN_SERVER          : 8
+SEND                 : 9
+error                : 
+
+Nonterminals, with rules where they appear
+
+accept               : 5
+close_client         : 4
+close_server         : 6
+open_client          : 1
+open_server          : 2
+send                 : 3
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . open_client
+    (2) statement -> . open_server
+    (3) statement -> . send
+    (4) statement -> . close_client
+    (5) statement -> . accept
+    (6) statement -> . close_server
+    (7) open_client -> . OPEN_CLIENT
+    (8) open_server -> . OPEN_SERVER
+    (9) send -> . SEND
+    (10) close_client -> . CLOSE_CLIENT
+    (11) accept -> . ACCEPT
+    (12) close_server -> . CLOSE_SERVER
+
+    OPEN_CLIENT     shift and go to state 8
+    OPEN_SERVER     shift and go to state 9
+    SEND            shift and go to state 10
+    CLOSE_CLIENT    shift and go to state 11
+    ACCEPT          shift and go to state 12
+    CLOSE_SERVER    shift and go to state 13
+
+    statement                      shift and go to state 1
+    open_client                    shift and go to state 2
+    open_server                    shift and go to state 3
+    send                           shift and go to state 4
+    close_client                   shift and go to state 5
+    accept                         shift and go to state 6
+    close_server                   shift and go to state 7
+
+state 1
+
+    (0) S' -> statement .
+
+
+
+state 2
+
+    (1) statement -> open_client .
+
+    $end            reduce using rule 1 (statement -> open_client .)
+
+
+state 3
+
+    (2) statement -> open_server .
+
+    $end            reduce using rule 2 (statement -> open_server .)
+
+
+state 4
+
+    (3) statement -> send .
+
+    $end            reduce using rule 3 (statement -> send .)
+
+
+state 5
+
+    (4) statement -> close_client .
+
+    $end            reduce using rule 4 (statement -> close_client .)
+
+
+state 6
+
+    (5) statement -> accept .
+
+    $end            reduce using rule 5 (statement -> accept .)
+
+
+state 7
+
+    (6) statement -> close_server .
+
+    $end            reduce using rule 6 (statement -> close_server .)
+
+
+state 8
+
+    (7) open_client -> OPEN_CLIENT .
+
+    $end            reduce using rule 7 (open_client -> OPEN_CLIENT .)
+
+
+state 9
+
+    (8) open_server -> OPEN_SERVER .
+
+    $end            reduce using rule 8 (open_server -> OPEN_SERVER .)
+
+
+state 10
+
+    (9) send -> SEND .
+
+    $end            reduce using rule 9 (send -> SEND .)
+
+
+state 11
+
+    (10) close_client -> CLOSE_CLIENT .
+
+    $end            reduce using rule 10 (close_client -> CLOSE_CLIENT .)
+
+
+state 12
+
+    (11) accept -> ACCEPT .
+
+    $end            reduce using rule 11 (accept -> ACCEPT .)
+
+
+state 13
+
+    (12) close_server -> CLOSE_SERVER .
+
+    $end            reduce using rule 12 (close_server -> CLOSE_SERVER .)
+
