@@ -22,6 +22,7 @@ def p_statement(p):
             | close_client
             | accept
             | close_server
+            | close
     """
 
 
@@ -66,6 +67,12 @@ def p_server_close(p):
     server.close(server_socket)
 
 
+def p_close(p):
+    """close : CLOSE"""
+    print("Terminating program...")
+    exit(0)
+
+
 
 yacc.yacc()
 while True:
@@ -74,16 +81,18 @@ while True:
         p_open_client(client_socket)
     elif s == 'open_server':
         p_open_server(server_socket)
-    elif s == 'accept':
-        conn, address = p_accept(server_socket)
     elif s == 'send':
         p_send(conn)
-    elif s == 'client_close':
+    elif s == 'close_client':
         p_client_close(client_socket)
-    elif s == 'server_close':
+    elif s == 'close_server':
         p_server_close(server_socket)
-    elif s == 'create_communications':
+    elif s == 'open_communications':
         p_open_client(client_socket)
         p_open_server(server_socket)
         conn, address = p_accept(server_socket)
         p_send(conn)
+    elif s == 'close':
+        p_client_close(client_socket)
+        p_server_close(server_socket)
+        p_close(None)

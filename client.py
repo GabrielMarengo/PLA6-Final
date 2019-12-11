@@ -14,7 +14,6 @@ def connect(s):
 def receive(s):
     msg = s.recv(8080)
     print("Received message: {}".format(msg.decode("utf-8")))
-    print()
 
 
 def close(s):

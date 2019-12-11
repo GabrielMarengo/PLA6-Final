@@ -7,6 +7,7 @@ reserved = {'create_client': 'OPEN_CLIENT',
     'close_client': 'CLOSE_CLIENT',
     'accept': 'ACCEPT',
     'close_server': 'CLOSE_SERVER',
+    'close': 'CLOSE',
 }
 
 # Tokens

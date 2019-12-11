@@ -14,6 +14,7 @@ Funuctionality:
 - Send message
 - Receive message
 - Close client and server
+- Terminate the program
 
 To initiate program:
 - run parser.py
@@ -22,10 +23,10 @@ Commands:
 - open_client: Create the client.
 - open_server: Create the server.
 - send: Send the message.
-- accept: Allow server to connect.
-- close_client: Close the connection with the server.
+- close_server: Close the connection with the server.
 - close_client: Close the connection with the client.
-- create_communications: run all of the above for quick setup
+- open_communications: run all of the above for quick setup.
+- close: Closes the client and server, terminates the program.
 
 References:
 - https://blog.usejournal.com/writing-your-own-programming-language-and-compiler-with-python-a468970ae6df 
